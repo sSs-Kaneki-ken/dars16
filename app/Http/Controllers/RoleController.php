@@ -52,7 +52,7 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        //
+        return view('users.show', compact('role'));
     }
 
     /**
