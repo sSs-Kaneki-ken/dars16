@@ -14,17 +14,18 @@ Route::get('/', function () {
 Route::get('/student', [StudentController::class , 'index']);
 Route::delete('/student/{student}' , [StudentController::class, 'destroy'])->name('student.destroy');
 
-
-
-
+// Talabalar uchun CRUD qoshildi
+Route::get('/student/create', [StudentController::class, 'create'])->name('student.create');
+Route::post('/student', [StudentController::class, 'store'])->name('student.store');
+Route::get('/student/{student}', [StudentController::class, 'show'])->name('student.show');
+Route::get('/student/{student}/edit', [StudentController::class, 'edit'])->name('student.edit');
+Route::put('/student/{student}', [StudentController::class, 'update'])->name('student.update');
 
 Route::get('/post' , [PostController::class , 'index']);
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 
-
 Route::get('/loginpage' , [AuthController::class , 'loginPage'])->name('loginPage');
 Route::post('/login' , [AuthController::class , 'login'])->name('login');
-
 
 Route::get('/registerpage' , [AuthController::class , 'registerPage'])->name('registerPage');
 Route::post('/register' , [AuthController::class , 'register'])->name('register');
